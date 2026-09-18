@@ -37,7 +37,7 @@ export function Footer() {
         </div>
 
         <div className="flex items-center gap-1">
-          <span>{t("Construído com", "Built with")} Next.js & Docker</span>
+          <span>{t("Construído com", "Built with")} Next.js</span>
         </div>
       </div>
 

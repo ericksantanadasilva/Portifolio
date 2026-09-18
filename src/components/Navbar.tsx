@@ -133,13 +133,13 @@ export function Navbar() {
     { id: "projects", labelPt: "Projetos", labelEn: "Projects" },
     { id: "tech", labelPt: "Tech", labelEn: "Tech" },
     { id: "experience", labelPt: "Carreira", labelEn: "Career" },
-    { id: "contact", labelPt: "Contato", labelEn: "Contact" },
+    // { id: "contact", labelPt: "Contato", labelEn: "Contact" },
   ];
 
   return (
     <header className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-40 w-full max-w-[96vw] sm:max-w-max flex justify-center px-2 pointer-events-none">
       <nav className="pointer-events-auto flex items-center justify-between sm:justify-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 rounded-full border border-zinc-300/90 dark:border-zinc-800/90 bg-[#f7f7f7]/90 dark:bg-[#18181b]/90 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-black/30 text-[11px] sm:text-xs md:text-sm font-mono max-w-full overflow-hidden">
-        
+
         {/* Links de Navegação com scroll suave e ajuste para telas estreitas */}
         <div className="flex items-center gap-0.5 sm:gap-1.5 overflow-x-auto no-scrollbar py-0.5">
           {navItems.map((item) => {
@@ -148,11 +148,10 @@ export function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className={`whitespace-nowrap px-2 sm:px-3 py-1 rounded-full transition-all duration-200 shrink-0 ${
-                  isActive
-                    ? "bg-zinc-900 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-900 font-semibold shadow-sm"
-                    : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60"
-                }`}
+                className={`whitespace-nowrap px-2 sm:px-3 py-1 rounded-full transition-all duration-200 shrink-0 ${isActive
+                  ? "bg-zinc-900 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-900 font-semibold shadow-sm"
+                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60"
+                  }`}
               >
                 {isActive && <span className="mr-1 text-emerald-500 hidden sm:inline">•</span>}
                 {t(item.labelPt, item.labelEn)}
@@ -186,7 +185,7 @@ export function Navbar() {
               aria-label="Toggle theme"
             >
               {resolvedTheme === "dark" ? (
-                <Sun className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-amber-400" />
+                <Sun className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-zinc-400" />
               ) : (
                 <Moon className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-zinc-800" />
               )}

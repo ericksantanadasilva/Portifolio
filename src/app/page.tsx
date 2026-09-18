@@ -12,7 +12,7 @@ export default function Home() {
       <ProjectsSection />
       <TechStackSection />
       <ExperienceSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
       <Footer />
     </main>
   );
