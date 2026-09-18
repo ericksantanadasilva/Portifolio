@@ -18,7 +18,7 @@ export function ExperienceSection() {
         {/* Cabeçalho */}
         <div className="space-y-1">
           <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 dark:text-zinc-400">
-            <span className="text-emerald-500 font-bold">/</span>
+            <span className="font-bold">/</span>
             <span>EXPERIENCE</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-zinc-950 dark:text-white">

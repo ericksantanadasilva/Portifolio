@@ -123,8 +123,8 @@ export const portfolioData: PortfolioData = {
   // Seus projetos (serão filtráveis instantaneamente pela barra de busca)
   projects: [
     {
-      id: "modern-portfolio",
-      title: "Portfolio",
+      id: "modern-portifolio",
+      title: "Portifolio",
       description: {
         pt: "Portfólio minimalista e veloz com suporte bilíngue, dark mode e conteinerização completa para deploy em VPS.",
         en: "Minimalist and fast portfolio with bilingual support, dark mode, and full containerization for VPS deployment.",

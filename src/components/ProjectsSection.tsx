@@ -34,7 +34,7 @@ export function ProjectsSection() {
         {/* Cabeçalho da Seção */}
         <div className="space-y-1">
           <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 dark:text-zinc-400">
-            <span className="text-emerald-500 font-bold">/</span>
+            <span className="font-bold">/</span>
             <span>PROJECTS</span>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

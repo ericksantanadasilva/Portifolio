@@ -32,7 +32,7 @@ export function TechStackSection() {
         {/* Cabeçalho da Seção estilo terminal */}
         <div className="space-y-1">
           <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 dark:text-zinc-400">
-            <span className="text-emerald-500 font-bold">/</span>
+            <span className="font-bold">/</span>
             <span>STACK</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-zinc-950 dark:text-white">
@@ -55,11 +55,10 @@ export function TechStackSection() {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 ${
-                  isSelected
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 ${isSelected
                     ? "bg-zinc-900 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-900 font-semibold shadow-sm"
                     : "border border-zinc-200/80 dark:border-zinc-800 bg-zinc-100/60 dark:bg-zinc-900/60 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60"
-                }`}
+                  }`}
               >
                 <Icon className="h-3.5 w-3.5" />
                 <span>{t(cat.labelPt, cat.labelEn)}</span>
