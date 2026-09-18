@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Habilitar a variante dark baseada na classe .dark adicionada pelo next-themes no html */
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ebebeb;
+    --foreground: #18181b;
+    --card: #f4f4f5;
+    --card-foreground: #18181b;
+    --border: #d4d4d8;
+    --muted: #e4e4e7;
+    --muted-foreground: #71717a;
+    --accent: #e4e4e7;
+    --accent-foreground: #18181b;
+  }
+
+  .dark {
+    --background: #111111;
+    --foreground: #f4f4f5;
+    --card: #18181b;
+    --card-foreground: #f4f4f5;
+    --border: #27272a;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #27272a;
+    --accent-foreground: #f4f4f5;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Animação suave para View Transitions estilo Telegram (expandir no dark, recolher no light) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Light -> Dark: o novo tema escuro expande por cima */
+.transition-light-to-dark::view-transition-old(root) {
+  z-index: 1;
+}
+.transition-light-to-dark::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* Dark -> Light (Telegram style): o tema escuro anterior encolhe por cima, revelando o tema claro embaixo */
+.transition-dark-to-light::view-transition-old(root) {
+  z-index: 9999;
+}
+.transition-dark-to-light::view-transition-new(root) {
+  z-index: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #71717a40;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a70;
+}
+
+/* Ocultar scrollbars horizontais em elementos com scroll responsivo */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
